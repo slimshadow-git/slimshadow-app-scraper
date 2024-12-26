@@ -4,10 +4,11 @@ import { SearchBar } from './components/SearchBar';
 import { FileList } from './components/FileList';
 import { Pagination } from './components/Pagination';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { PWAInstallPrompt } from './components/PWAInstallPrompt';
 import { useDarkMode } from './hooks/useDarkMode';
 import { useFileList } from './hooks/useFileList';
 
-function App() {
+export default function App() {
   const [isDark, setIsDark] = useDarkMode();
   const {
     files,
@@ -51,9 +52,8 @@ function App() {
             </>
           )}
         </main>
+        <PWAInstallPrompt />
       </ErrorBoundary>
     </div>
   );
 }
-
-export default App;
